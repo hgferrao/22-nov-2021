@@ -1,0 +1,284 @@
+// String methods
+String str='iam a string ';
+System.debug('Upper case:' +str.toUpperCase());
+System.debug('Lower case:' +str.toLowerCase());
+System.debug('Capitalize:' +str.capitalize());
+System.debug('Remove ring: '+str.remove('ring'));
+
+String str1='Henry';
+String str2='hSnry';
+System.debug('Matching str1 with str2 ?: '+str1.toLowerCase().equals(str2.toLowerCase()));
+
+String myName='henry how are you';
+System.debug('Replace : '+myName.replace('how','where'));
+
+/*
+String str='hey henry wher\'s your\'s id?';
+System.debug(str);
+
+String str1='Hi how are you';
+System.debug(str1);
+
+
+// this is single line comment
+
+// List data type
+
+List<Integer>rollNumber=new List<Integer>{1,2,3,4,5,6};
+    System.debug(rollNumber);
+
+rollNumber.add(7);
+rollNumber.add(8);
+rollNumber.add(9);
+ System.debug(rollNumber);
+*/
+List<Integer>rollNumber=new List<Integer>{1,2,3,4,5,6};
+System.debug(rollNumber);
+rollNumber.add(7);
+rollNumber.add(8);
+rollNumber.add(9);
+System.debug(rollNumber);
+
+// get value
+System.debug(rollNumber.get(2));  //3
+
+// Add
+rollNumber.add(2,200);
+System.debug(rollNumber);
+
+// remove
+rollNumber.remove(3);
+System.debug(rollNumber);
+
+//size
+System.debug(rollNumber.size());
+
+// Update list
+rollNumber.set(0,4444);
+System.debug(rollNumber);
+// Clear list
+rollNumber.clear();
+System.debug(rollNumber);
+System.debug(rollNumber.size());
+
+
+
+// List data type
+
+Set<Integer>rollNumber=new Set<Integer>{1,2,3,4,5,6};
+System.debug(rollNumber);
+rollNumber.add(7);
+rollNumber.add(8);
+rollNumber.add(9);
+System.debug(rollNumber);
+
+// Adding duplicate value not allowed
+rollNumber.add(7);
+System.debug(rollNumber);
+
+// to check if contains a value
+System.debug(rollNumber.contains(1)); // true
+
+// delete a value 
+rollNumber.remove(7);
+System.debug(rollNumber);
+System.debug(rollNumber.size());
+
+// to check if Empty
+System.debug(rollNumber.isEmpty());
+// clear a value 
+rollNumber.clear();
+System.debug(rollNumber);
+System.debug(rollNumber.size());
+
+// Map
+
+Map<Integer,String> class2020=new Map<Integer,String>();
+
+// add element
+class2020.put(1,'henry');
+class2020.put(2,'manju');
+class2020.put(3,'vilas');
+class2020.put(4,'edwin');
+class2020.put(5,'Archana');
+System.debug(class2020);
+
+// Update / override
+class2020.put(5,'roshan');
+System.debug(class2020);
+
+// Get a value
+System.debug(class2020.get(5));
+
+// Remove a value
+class2020.remove(2);
+System.debug(class2020);
+
+// Get all the  keys
+System.debug(class2020.keySet());
+
+// Get all the  values
+List<String>students=class2020.values();
+System.debug(students);
+
+// Check if map has a key
+System.debug(class2020.containsKey(1));
+
+// Challenge 1
+
+// Post for apex catogory
+List<String>apexPosts=new List<String>{'Demystifying Apex Collections', 'Datatypes and variables in Apex'};
+// Post for lightning catogory
+List<String>lightningPosts=new List<String>{'Events in Aura framework', 'Developing reusable components'};
+
+// Map can store collection of lists
+Map<String,List<String>>allPosts=new Map<String,List<String>>();
+//Insert apex posts
+allPosts.put('Apex',apexPosts);
+allPosts.put('Lightning',lightningPosts);
+System.debug(allPosts);
+// Constants
+
+final Decimal PI=3.14;
+System.debug(PI);
+// cannot do this to final Gives an error
+/*
+PI=5.14;
+System.debug(PI);
+*/
+// Operators 
+integer x=5;
+System.debug(x);
+x=x+5;
+System.debug(x);
+x=x-5;
+System.debug(x);
+x=x*5;
+System.debug(x);
+x=x/5;
+System.debug(x);
+
+// AND
+Boolean first=true;
+Boolean second=false;
+Boolean result;
+result=first && second;
+System.debug(result);
+
+// OR
+System.debug(result=first || second);
+
+// Equality
+System.debug(result=first == second);
+
+//NOT
+first=!first;
+
+//
+System.debug(first);
+System.debug(5<8);
+System.debug(5>1);
+System.debug(5<=8);
+System.debug(5>=8);
+
+// ternary
+String greeting='';
+integer num=10;
+greeting=(num>=12)? 'Good Afternoon':'Good Morning';
+System.debug(greeting);
+
+// Data type conversion
+
+String maths='50';
+String science='60';
+String english='70';
+Integer totalMarks=Integer.valueOf(maths)+Integer.valueOf(science)+Integer.valueOf(english);
+system.debug('Total Marks : '+totalMarks);
+
+// IF- Else
+Boolean isItSunny=true;
+Boolean isItRaining=false;
+Boolean areYouWorking=false;
+
+if(isItSunny){
+    System.debug('Do not go to party');
+}else if(isItRaining){
+    System.debug('Bring your umbrella');
+}else if(areYouWorking){
+    System.debug('Do not go to party');
+}else{
+    System.debug('YaaY !! It\'s Party Time...');
+}
+
+// if current hour is in between 0-12 >> Good Morning
+// else if current hour is in between 12 to 17 >> Good Afternoon
+// else >> Good Evening
+
+// Switch statement
+integer currentHour=18;
+
+switch on currentHour {
+    when 1,2,3,4,5,6,7,8,9,10,11,12{
+        system.debug('Good Morning');
+    }
+    when 13,14,15,16{
+         system.debug('Good Afternoon');
+    }
+    when else{
+         system.debug('Good Evening');
+    }
+}
+
+// Do-While
+Integer year = 1100;
+
+do {
+    System.debug('Processing year '+year);
+    // check if year is leap year or not
+
+    // check if year is evenly divisible by 4
+    if(Math.mod(year, 4) == 0){
+        //check if year is evenly divisible by 100
+        if(Math.mod(year, 100) == 0){
+            // check if year is evenly divisible by 400
+            if(Math.mod(year, 400) == 0){
+                System.debug(year + ' is a leap year');
+            }
+        } else{
+            System.debug(year + ' is a leap year');
+        }
+    }
+
+    // increment year value
+    year++;
+} while(year <= 2000);
+System.debug('Year value after loop '+ year);
+
+// Break
+
+Integer breakLoop=11;
+Integer n=100;
+for(Integer i=1;i<=n;i++){
+    system.debug('Im at '+i+' stage');
+    if(i==breakLoop){
+        break;
+    }
+}
+
+// Continue
+
+Integer continueLoop=10;
+Integer n=100;
+for(Integer i=1;i<=n;i++){
+    if(i==continueLoop){
+        continue;
+    }
+      system.debug('Im at '+i+' stage');
+}
+
+// List/Set for loop
+
+List<integer>rollNumbers=new List<Integer>{1,2,3,4,5,6};
+    for(Integer rollNumber:rollNumbers){
+        system.debug('Student Roll No: '+rollNumber);
+    }
